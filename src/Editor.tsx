@@ -5,6 +5,7 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
 import { Box } from '@mui/material';
 import { MuiContentEditable, placeHolderSx } from './style';
 import { editorTheme } from './theme';
+import TreeViewPlugin from './plugins/TreeViewPlugin';
 
 const Editor = () => {
   return (
@@ -27,6 +28,7 @@ const Editor = () => {
         />
         <HistoryPlugin />
       </Box>
+      <TreeViewPlugin />
     </LexicalComposer>
   );
 };
