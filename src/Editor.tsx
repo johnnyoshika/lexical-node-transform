@@ -6,6 +6,8 @@ import { Box } from '@mui/material';
 import { MuiContentEditable, placeHolderSx } from './style';
 import { editorTheme } from './theme';
 import TreeViewPlugin from './plugins/TreeViewPlugin';
+import ColoredTextPlugin from './plugins/ColoredTextPlugin';
+import { ColoredNode } from './nodes/ColoredNode';
 
 const Editor = () => {
   return (
@@ -16,6 +18,7 @@ const Editor = () => {
         onError: (error: Error) => {
           throw error;
         },
+        nodes: [ColoredNode],
       }}
     >
       <Box sx={{ position: 'relative', background: 'white' }}>
@@ -27,6 +30,7 @@ const Editor = () => {
           ErrorBoundary={LexicalErrorBoundary}
         />
         <HistoryPlugin />
+        <ColoredTextPlugin />
       </Box>
       <TreeViewPlugin />
     </LexicalComposer>
