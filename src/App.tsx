@@ -14,7 +14,7 @@ const App = () => {
         alignItems="center" // Center content horizontally
       >
         <Grid item sx={{ my: 4 }}>
-          <Typography variant="h4">Essay Editor</Typography>
+          <Typography variant="h4">Lexical Node Transform</Typography>
         </Grid>
         <Grid item sx={{ width: '80%' }}>
           <Editor />
