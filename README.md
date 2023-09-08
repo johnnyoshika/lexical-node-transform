@@ -16,3 +16,13 @@ npm ci
 ```
 npm run dev
 ```
+
+Type the following into the editor and watch the colors change for red and blue:
+
+> roses are red violets are blue
+
+## Demo
+
+<video src="assets/demo.mp4" controls title="Title"></video>
+
+https://github.com/johnnyoshika/lexical-node-transform/assets/504505/728fd5ac-4296-4d65-8357-bd9067183bc4
