@@ -9,8 +9,10 @@ import TreeViewPlugin from './plugins/TreeViewPlugin';
 import ColoredTextPlugin from './plugins/ColoredTextPlugin';
 import { ColoredNode } from './nodes/ColoredNode';
 import ClipboardPlugin from './plugins/ClipboardPlugin';
+import useClipboardTracker from './hooks/useClipboardTracker';
 
 const Editor = () => {
+  useClipboardTracker();
   return (
     <LexicalComposer
       initialConfig={{
