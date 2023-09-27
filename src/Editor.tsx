@@ -10,6 +10,7 @@ import ColoredTextPlugin from './plugins/ColoredTextPlugin';
 import { ColoredNode } from './nodes/ColoredNode';
 import ClipboardPlugin from './plugins/ClipboardPlugin';
 import useClipboardTracker from './hooks/useClipboardTracker';
+import TextContentPlugin from './plugins/TextContentPlugin';
 
 const Editor = () => {
   useClipboardTracker();
@@ -35,6 +36,7 @@ const Editor = () => {
         <HistoryPlugin />
         <ColoredTextPlugin />
         <ClipboardPlugin />
+        <TextContentPlugin />
       </Box>
       <TreeViewPlugin />
     </LexicalComposer>
