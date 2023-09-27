@@ -8,6 +8,7 @@ import { editorTheme } from './theme';
 import TreeViewPlugin from './plugins/TreeViewPlugin';
 import ColoredTextPlugin from './plugins/ColoredTextPlugin';
 import { ColoredNode } from './nodes/ColoredNode';
+import ClipboardPlugin from './plugins/ClipboardPlugin';
 
 const Editor = () => {
   return (
@@ -31,6 +32,7 @@ const Editor = () => {
         />
         <HistoryPlugin />
         <ColoredTextPlugin />
+        <ClipboardPlugin />
       </Box>
       <TreeViewPlugin />
     </LexicalComposer>
