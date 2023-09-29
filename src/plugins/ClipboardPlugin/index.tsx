@@ -1,6 +1,7 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { useEffect } from 'react';
 import {
+  $getRoot,
   $getSelection,
   $isRangeSelection,
   COMMAND_PRIORITY_NORMAL,
@@ -24,9 +25,42 @@ const ClipboardPlugin = () => {
             'text/plain',
             payload.clipboardData?.getData('text/plain'),
           );
+          console.log(
+            'PASTE_COMMAND Before paste',
+            $getRoot().getTextContent(),
+          );
+
+          editor.update(() => {}, {
+            onUpdate: () => {
+              editor.getEditorState().read(() => {
+                console.log(
+                  'PASTE_COMMAND After paste',
+                  $getRoot().getTextContent(),
+                );
+              });
+            },
+          });
           return false;
         },
         COMMAND_PRIORITY_NORMAL,
+      ),
+    [editor],
+  );
+
+  useEffect(
+    () =>
+      editor.registerUpdateListener(
+        ({ editorState, prevEditorState, tags }) => {
+          if (!tags.has('paste')) return;
+
+          prevEditorState.read(() => {
+            console.log('Before paste', $getRoot().getTextContent());
+          });
+
+          editorState.read(() => {
+            console.log('After paste', $getRoot().getTextContent());
+          });
+        },
       ),
     [editor],
   );
